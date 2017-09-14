@@ -20,12 +20,29 @@ function cityImage() {
         src = "images/Paris_skyline.jpg";
         console.log(src)
     } else
-    if (city == "") {
-        src = "";
-        console.log("No image loaded")
+    if (city == "Auckland") {
+        src = "images/Auckland_skyline.jpg";
+        console.log(src)
+    } else
+    if (city == "Sydney") {
+        src = "images/Sydney_skyline.jpg";
+        console.log(src)
+    } else
+    if (city == "Moscow") {
+        src = "images/Moscow.jpg";
+        console.log(src)
+    } else
+    if (city == "San Francisco") {
+        src = "images/San_Francisco.jpg";
+        console.log(src)
+    } else
+    if (city == "Tokyo") {
+        src = "images/Tokyo_skyline.jpg";
+        console.log(src)
     }
 
     city_image.setAttribute('src', src)
     console.log(city_image)
 
 }
+

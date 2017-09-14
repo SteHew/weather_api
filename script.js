@@ -6,12 +6,12 @@ var units = '&units=metric';
 var input;
 
 function setup() {
-    //createCanvas(400, 200);
+    // createCanvas(400, 200);
 
-    //var button = document.getElementById('#submit');
-    //button.mousePressed(weatherAsk);
+    var button = document.getElementById('#submit');
+    button.mousePressed(weatherAsk);
 
-    //input = select('#city');
+    input = select('#city');
 }
 
 function weatherAsk() {
@@ -23,12 +23,12 @@ function gotData(data) {
     weather = data;
 }
 
-function draw() {
-    background(0);
-    if (weather) {
-        var temp = weather.main.temp;
-        var humidity = weather.main.humidity;
-        ellipse(100, 100, temp, temp);
-        ellipse(300, 100, humidity, humidity);
-    }
-}
+// function draw() {
+//     background(0);
+//     if (weather) {
+//         var temp = weather.main.temp;
+//         var humidity = weather.main.humidity;
+//         ellipse(100, 100, temp, temp);
+//         ellipse(300, 100, humidity, humidity);
+//     }
+// }
