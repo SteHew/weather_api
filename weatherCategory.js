@@ -3,10 +3,12 @@ var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
 var apiKey = '&appid=6d5d22aef48b5087d22f2e0ef3ad790e';
 var units = '&units=metric';
 
+var input = city;
+
+
 function weatherCategory() {
     
     const theUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
-    var input = city;
     const theKey = '&appid=6d5d22aef48b5087d22f2e0ef3ad790e&units=metric';
     
     let weatherCategory = (theUrl) => {
