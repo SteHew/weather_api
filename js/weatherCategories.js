@@ -3,8 +3,6 @@ var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
 var apiKey = '&appid=6d5d22aef48b5087d22f2e0ef3ad790e';
 var units = '&units=metric';
 
-var input = city;
-
 
 function weatherCategory() {
     
@@ -28,13 +26,15 @@ function weatherCategory() {
                         let listitems = document.createElement('li');
                         listitems.setAttribute('class', 'list-group-item');
                         listitems.innerHTML = "<span>"+result[i].id+"</span>"+result[i].weather[0].main;
+                        listitems.innerHTML = "<span>"+result[i]+"</span>"+result[i].main[0].temp;
                         weatherCategory.appendChild(listitems);
                     }
+                    console.log(listitems);
                 }
             }
         }).bind(undefined, theUrl);
     
-        xmlHttp.open( "GET", theUrl, true ); // false for synchronous request
+        xmlHttp.open( "GET", theUrl, true );
         xmlHttp.send( null );
     }
     

@@ -1,6 +1,6 @@
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
-const url = require('url')
+// const {app, BrowserWindow} = require('electron')
+// const path = require('path')
+// const url = require('url')
 
 let win
 
@@ -19,19 +19,19 @@ function createWindow () {
   })
 }
 
-app.on('ready', createWindow)
+// app.on('ready', createWindow)
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
+// app.on('window-all-closed', () => {
+//   if (process.platform !== 'darwin') {
+//     app.quit()
+//   }
+// })
 
-app.on('activate', () => {
-  if (win === null) {
-    createWindow()
-  }
-})
+// app.on('activate', () => {
+//   if (win === null) {
+//     createWindow()
+//   }
+// })
 
 var weather;
 var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
@@ -41,12 +41,11 @@ var units = '&units=metric';
 var input;
 
 function setup() {
-    // createCanvas(400, 200);
 
     var button = document.getElementById('#submit');
-    button.mousePressed(weatherAsk);
+    // button.mousePressed(weatherAsk);
 
-    input = select('#city');
+    input = document.getElementById('#city');
 }
 
 function weatherAsk() {
@@ -56,14 +55,8 @@ function weatherAsk() {
 
 function gotData(data) {
     weather = data;
-}
+    var category;
 
-// function draw() {
-//     background(0);
-//     if (weather) {
-//         var temp = weather.main.temp;
-//         var humidity = weather.main.humidity;
-//         ellipse(100, 100, temp, temp);
-//         ellipse(300, 100, humidity, humidity);
-//     }
-// }
+    category = document.getElementById('#category');
+}
+console.log(category);

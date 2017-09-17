@@ -6,42 +6,42 @@ var units = '&units=metric';
 
 function cityImage() {
     
-    var src;
+    var imgSrc;
     var city_image = document.getElementById('city-image');
     var city = document.getElementById("city").value;
 
     console.log(city)
 
     if (city == "London") {
-        src = "images/London-on-Thames.jpg";
-        console.log(src)
+        imgSrc = "images/London-on-Thames.jpg";
+        console.log(imgSrc)
     } else
     if (city == "Paris") {
-        src = "images/Paris_skyline.jpg";
-        console.log(src)
+        imgSrc = "images/Paris_skyline.jpg";
+        console.log(imgSrc)
     } else
     if (city == "Auckland") {
-        src = "images/Auckland_skyline.jpg";
-        console.log(src)
+        imgSrc = "images/Auckland_skyline.jpg";
+        console.log(imgSrc)
     } else
     if (city == "Sydney") {
-        src = "images/Sydney_skyline.jpg";
-        console.log(src)
+        imgSrc = "images/Sydney_skyline.jpg";
+        console.log(imgSrc)
     } else
     if (city == "Moscow") {
-        src = "images/Moscow.jpg";
-        console.log(src)
+        imgSrc = "images/Moscow.jpg";
+        console.log(imgSrc)
     } else
     if (city == "San Francisco") {
-        src = "images/San_Francisco.jpg";
-        console.log(src)
+        imgSrc = "images/San_Francisco.jpg";
+        console.log(imgSrc)
     } else
     if (city == "Tokyo") {
-        src = "images/Tokyo_skyline.jpg";
-        console.log(src)
+        imgSrc = "images/Tokyo_skyline.jpg";
+        console.log(imgSrc)
     }
 
-    city_image.setAttribute('src', src)
+    city_image.setAttribute('src', imgSrc)
     console.log(city_image)
 
 }
