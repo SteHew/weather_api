@@ -1,46 +1,54 @@
-var weather;
-var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
-var apiKey = '&appid=6d5d22aef48b5087d22f2e0ef3ad790e';
-var units = '&units=metric';
+function displayWeatherCategory(baseUrl) {
 
-
-function weatherCategory() {
-    
-    const theUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
-    const theKey = '&appid=6d5d22aef48b5087d22f2e0ef3ad790e&units=metric';
-    
     let weatherCategory = (theUrl) => {
         
         let xmlHttp = new XMLHttpRequest();
     
         xmlHttp.onreadystatechange = ((theUrl) => {
+
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 
                 let weatherCategory = document.getElementById('category');
                 let result = JSON.parse(xmlHttp.responseText);
-    
-                if (result.length > 0) {
-    
-                    for (let i = 0; i < result.length; i++) {
-    
-                        let listitems = document.createElement('li');
-                        listitems.setAttribute('class', 'list-group-item');
-                        listitems.innerHTML = "<span>"+result[i].id+"</span>"+result[i].weather[0].main;
-                        listitems.innerHTML = "<span>"+result[i]+"</span>"+result[i].main[0].temp;
-                        weatherCategory.appendChild(listitems);
-                    }
-                    console.log(listitems);
+
+                console.log(result);
+
+                let weatherType = result.weather[0].main
+                let temperature = result.main.temp
+
+                switch(weatherType) {
+                    case "Clear":
+                        var type = document.getElementById('weather-image')
+                        type.setAttribute('src', 'images/urban_sunshine.jpg')
+                    break
+                    case "Rain":
+                        var type = document.getElementById('weather-image')
+                        type.setAttribute('src', 'images/urban_rain.jpg')
+                    break
+                    case "Cloudy":
+                    var type = document.getElementById('weather-image')
+                    type.setAttribute('src', 'images/urban_cloudy.jpg')
+                    break
+                    case "Snow":
+                    var type = document.getElementById('weather-image')
+                    type.setAttribute('src', 'images/urban_snow.jpg')
+                    break
                 }
+    
+                var degrees = document.getElementById('degrees')
+                degrees.innerHTML = `${temperature}°`
             }
+            else {
+                console.log("Waiting....")
+            }
+
         }).bind(undefined, theUrl);
     
         xmlHttp.open( "GET", theUrl, true );
         xmlHttp.send( null );
     }
-    
-    let getWeatherCategories = () => {
-        weatherCategory(baseurl)
-    }  
+
+    weatherCategory(baseUrl) 
 }
 
 
